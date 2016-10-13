@@ -1,0 +1,42 @@
+#!/usr/bin/env php
+<?php
+/**
+ * conf2json
+ *
+ * Library that converts PHP configuration files to JSON.
+ *
+ * @author Víctor Díaz <victor@axiomer.com>
+ * @website https://victordiaz.me
+ * @copyright 2016 Víctor Díaz
+ * @license The MIT License (MIT) https://opensource.org/licenses/MIT
+ * @version 1.0.0
+ */
+
+use victordzmr\conf2json;
+
+/*
+ * Autoload.
+ */
+require __DIR__ . '/../../autoload.php';
+
+/*
+ * CLI script.
+ */
+
+// Remove the first argument
+array_shift($argv);
+
+// Enable the verbose mode if not set
+if (!array_key_exists(4, $argv)) {
+	
+	// Fill empty positions with null values
+	foreach ([2, 3] as $pos)
+		if (!array_key_exists($pos, $argv))
+			$argv[$pos] = null;
+	
+	$argv[4] = true;
+}
+
+// Perform the conversion
+$conf2json = new conf2json(...$argv);
+$conf2json->run();

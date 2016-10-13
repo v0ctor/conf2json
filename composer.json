@@ -1,0 +1,26 @@
+{
+	"name": "victordzmr/conf2json",
+	"description": "Library that converts PHP configuration files to JSON. It also includes a command-line interface.",
+	"type": "library",
+	"homepage": "https://github.com/victordzmr/conf2json",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Víctor Díaz",
+			"email": "victor@axiomer.com",
+			"homepage": "https://victordiaz.me"
+		}
+	],
+	"require": {
+		"php": "^7.0.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"victordzmr\\": "src/"
+		}
+	},
+	"minimum-stability": "stable",
+	"bin": [
+		"conf2json"
+	]
+}
